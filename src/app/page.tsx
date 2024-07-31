@@ -1,6 +1,9 @@
-// import Login from "@/components/Login";
-import Image from "next/image";
-
+import Link from "next/link";
 export default function Home() {
-  return <div className="bg-red-500">Hello world from home page</div>;
+  return (
+    <div className="flex justify-center items-center">
+      <h2>Welcome to Home page</h2>
+      <Link href={"/login"}>Login</Link>
+    </div>
+  );
 }
