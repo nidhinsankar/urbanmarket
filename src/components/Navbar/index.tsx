@@ -7,25 +7,33 @@ import Logout from "../forms/Logout";
 const Navbar = async () => {
   const session = await auth();
   return (
-    <div className=" bg-white bg-opacity-30   sticky top-0">
+    <div className=" bg-white bg-opacity-30   sticky top-0 border-b">
       <div className="flex max-w-7xl h-16 px-5 justify-between items-center mx-auto">
         <Link href={"/"} className="font-bold text-lg md:text-2xl">
           Urban Market
         </Link>
         <div className="flex gap-4 ">
+          <>
+            <Link
+              className={cn(buttonVariants({ variant: "default" }))}
+              href={"/profile"}
+            >
+              Profile
+            </Link>
+          </>
           {session ? (
             <Logout />
           ) : (
             <>
               <Link
                 className={cn(buttonVariants({ variant: "default" }))}
-                href={"/sign-in"}
+                href={"/login"}
               >
                 Login
               </Link>
               <Link
                 className={cn(buttonVariants({ variant: "default" }))}
-                href={"/sign-up"}
+                href={"/login"}
               >
                 Register
               </Link>

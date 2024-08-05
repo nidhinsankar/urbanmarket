@@ -6,7 +6,7 @@ export const doLogin = async (FormData: any) => {
   const action = FormData.get("action");
   //   console.log("eee", nextvalueauth);
 
-  await signIn(action as string, { redirectTo: "/profile" });
+  await signIn(action, { redirectTo: "/profile" });
 };
 
 export const logout = async () => {
