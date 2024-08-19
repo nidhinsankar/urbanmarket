@@ -1,6 +1,6 @@
 "use server";
 // import { signin, signout } from "@/lib/auth/auth";
-import { signIn, signOut } from "@/lib/auth/auth";
+import { signIn, signOut } from "../../../lib/auth/auth";
 
 export const doLogin = async (FormData: any) => {
   const action = FormData.get("action");

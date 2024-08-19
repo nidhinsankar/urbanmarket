@@ -1,6 +1,6 @@
 import Logout from "../../../components/forms/Logout";
 import { Button } from "../../../components/ui/button";
-import { auth } from "@/lib/auth/auth";
+import { auth } from "../../../lib/auth/auth";
 import { redirect } from "next/navigation";
 
 const ProfilePage = async () => {

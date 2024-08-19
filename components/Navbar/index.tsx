@@ -1,7 +1,7 @@
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
-import { auth } from "@/lib/auth/auth";
+import { auth } from "../../lib/auth/auth";
 import Logout from "../forms/Logout";
 
 const Navbar = async () => {
