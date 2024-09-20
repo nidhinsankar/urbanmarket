@@ -20,6 +20,12 @@ const Navbar = async () => {
             >
               Profile
             </Link>
+            <Link
+              className={cn(buttonVariants({ variant: "default" }))}
+              href={"/create-product"}
+            >
+              Add Product
+            </Link>
           </>
           {session ? (
             <Logout />
