@@ -31,3 +31,14 @@ export type ValidNames =
   | "price"
   | "quantity"
   | "productType";
+
+export interface IProduct {
+  id: string;
+  image: string;
+  name: string;
+  smallDescription: string;
+  description: string;
+  price: number;
+  quantity: number;
+  productType: string;
+}
