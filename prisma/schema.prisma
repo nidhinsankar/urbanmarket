@@ -57,3 +57,23 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model Product {
+  id  String  @id @default(cuid())
+  name String 
+  description  String
+  fullDescription  String
+  price  Int
+  categoryId  String
+  stock  Int
+  images  String[]
+  createdAt  DateTime
+  UpdatedAt  DateTime 
+}
+
+model Category {
+  id  String  @nidhinsankar
+  name String 
+  description String
+  parentId  String
+}

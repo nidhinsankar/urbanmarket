@@ -7,12 +7,12 @@ const ProfilePage = async () => {
   const session = await auth();
   // console.log("sesseion", session);
 
-  if (!session) redirect("/login");
+  // if (!session) redirect("/login");
 
   return (
     <div>
       Profile {session?.user?.email}
-      {session?.user?.name}
+      {session?.user?.name} this is the admin page
       <Logout />
     </div>
   );

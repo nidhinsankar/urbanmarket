@@ -16,9 +16,9 @@ const Navbar = async () => {
           <>
             <Link
               className={cn(buttonVariants({ variant: "default" }))}
-              href={"/profile"}
+              href={"/admin"}
             >
-              Profile
+              admin
             </Link>
             <Link
               className={cn(buttonVariants({ variant: "default" }))}
