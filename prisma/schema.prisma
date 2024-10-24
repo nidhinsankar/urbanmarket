@@ -9,35 +9,36 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-  directUrl= env("DIRECT_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model User {
-  id              String  @id @default(cuid()) @db.VarChar(30)
-  name            String?
-  email           String   @unique
-  image           String?
-  emailVerified   DateTime?
-  accounts        Account[]
-  sessions        Session[]
+  id            String    @id @default(cuid()) @db.VarChar(30)
+  name          String?
+  email         String    @unique
+  image         String?
+  emailVerified DateTime?
+  accounts      Account[]
+  sessions      Session[]
 }
+
 model Account {
-  id                 String   @id @default(cuid()) @db.VarChar(30)
+  id                 String    @id @default(cuid()) @db.VarChar(30)
   userId             String
   provider           String
   providerAccountId  String
-  refreshToken       String?  @db.Text
-  accessToken        String?  @db.Text
+  refreshToken       String?   @db.Text
+  accessToken        String?   @db.Text
   access_token       String?
   accessTokenExpires DateTime?
   expires_at         Int?
   type               String?
   scope              String?
   token_type         String?
-  id_token           String?  @db.Text  
-  user               User     @relation(fields: [userId], references: [id])
+  id_token           String?   @db.Text
+  user               User      @relation(fields: [userId], references: [id])
 
   @@unique([provider, providerAccountId])
 }
@@ -59,21 +60,23 @@ model VerificationToken {
 }
 
 model Product {
-  id  String  @id @default(cuid())
-  name String 
-  description  String
-  fullDescription  String
-  price  Int
-  categoryId  String
-  stock  Int
-  images  String[]
-  createdAt  DateTime
-  UpdatedAt  DateTime 
+  id              String   @id @default(cuid()) @db.VarChar(30)
+  name            String
+  description     String
+  fullDescription String
+  price           Int
+  category        Category @relation(fields: [categoryId], references: [id])
+  categoryId      String
+  stock           Int
+  images          String[]
+  createdAt       DateTime
+  UpdatedAt       DateTime
 }
 
 model Category {
-  id  String  @nidhinsankar
-  name String 
+  id          String    @id @default(cuid()) @db.VarChar(30)
+  name        String
   description String
-  parentId  String
+  parentId    String
+  products    Product[]
 }
