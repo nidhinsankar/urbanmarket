@@ -20,6 +20,7 @@ model User {
   email         String    @unique
   image         String?
   emailVerified DateTime?
+  role          UserRole  @default(CUSTOMER)
   accounts      Account[]
   sessions      Session[]
 }
@@ -79,4 +80,9 @@ model Category {
   description String
   parentId    String
   products    Product[]
+}
+
+enum UserRole {
+  ADMIN
+  CUSTOMER
 }
